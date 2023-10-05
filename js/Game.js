@@ -46,4 +46,40 @@ class Game {
         this.removeLife();
       }
     }
+
+    removeLife () {
+        //select all the liveheart img
+       const hearts = document.querySelectorAll('.tries');
+       this.missed++
+       if (this.misses > 5) {
+            this.gameOver();
+       } else {
+        hearts[this.missed - 1].src = 'images/lostHeart.png';
+       }
+    }
+
+    checkForWin () {
+        const phraseLetters = document.querySelectorAll('.hide');
+        if (phraseLetters.length <= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    gameOver (outcome) {
+        const overlay = document.querySelector('.overlay');
+        const gameOverMessage = document.querySelector('#game-over-message');
+        if (outcome) {
+           overlay.style.display = 'block';
+           overlay.classList.add('win');
+           overlay.classList.remove('start');
+           gameOverMessage.innerText = 'You are a winner!';
+        } else {
+            overlay.style.display = 'block';
+           overlay.classList.add('lose');
+           overlay.classList.remove('start');
+           gameOverMessage.innerText = 'Try Again!';
+        }
+    }
 }
