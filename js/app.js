@@ -7,10 +7,11 @@
 const startBtn = document.querySelector('#btn__reset');
 
 //instance of  game
-const game = new Game();
+let game;
 
 //start the game 
 startBtn.addEventListener('click', () => {
+  game = new Game();
     game.startGame();
 })
 

@@ -79,10 +79,10 @@ class Game {
         overlay.style.display = 'block';
         overlay.classList.remove('start');
         if (outcome) {
-           overlay.classList.add('win');
+           overlay.className = 'win';
            gameOverMessage.innerText = 'You are a winner!';
         } else {
-           overlay.classList.add('lose');
+           overlay.className = 'lose';
            gameOverMessage.innerText = 'Try Again!';
         }
         this.resetGame();
