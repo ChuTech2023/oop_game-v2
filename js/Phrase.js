@@ -24,6 +24,7 @@ class Phrase {
         phraseContainer.innerHTML = lis;
     }
 
+    //checked if correct or wrong letter is clicked
     checkLetter(letter) {
         if (this.phrase.includes(letter)) {
             return true;
@@ -32,6 +33,7 @@ class Phrase {
         }
     }
 
+    //shows hidden letter when it is selected
     showMatchedLetter(letter) {
         const letters = document.querySelectorAll('.hide'); 
 
